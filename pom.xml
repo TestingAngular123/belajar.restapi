@@ -11,7 +11,7 @@
 	<groupId>com.bca</groupId>
 	<artifactId>belajar.restapi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>belajar.restapi</name>
 	<description>belajar.restapi</description>
 	<properties>
