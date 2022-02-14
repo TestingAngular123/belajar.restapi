@@ -14,6 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "*")
 public class UsersController {
 
+	@PostMapping(value = "/welcome")
+	public ResponseEntity<?> welcome() {
+
+		return new ResponseEntity<String>("Welcome",HttpStatus.OK);
+	}
+	
+	
 	@PostMapping(value = "/add/user")
 	public ResponseEntity<?> addUser(@RequestBody String viewModel) {
 	
