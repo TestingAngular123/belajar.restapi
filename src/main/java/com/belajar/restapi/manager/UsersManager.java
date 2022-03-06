@@ -6,6 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import com.belajar.restapi.entity.Users;
@@ -29,12 +31,12 @@ public class UsersManager extends ManagerImpl{
 			setTotalRow(totalCount.intValue());
 			if(page != null && size != null && page > 0 && size > 0)
 			{
-				Pageable pageable =  PageRequest.of(page-1, size);
+				Pageable pageable =  PageRequest.of(page-1, size, Sort.by(Direction.ASC, "id"));
 				listUser = usersRepository.findAll(pageable).toList();
 			}
 			else
 			{
-				listUser = usersRepository.findAll();
+				listUser = usersRepository.findAll(Sort.by(Direction.ASC, "id"));
 			}
 			if(listUser != null && !listUser.isEmpty())
 			{
