@@ -58,8 +58,8 @@ public class UsersController {
 	
 	
 	
-	@GetMapping(value = "/get/user")
-	public ResponseEntity<?> getUser(@RequestParam(value="id") Integer id)
+	@GetMapping(value = "/get/user/{id}")
+	public ResponseEntity<?> getUser(@PathVariable(value="id") Integer id)
 	{		
 		UserOutput userOutput = userManager.getUser(id);
 		ErrorDetail info = userManager.getInfo();
